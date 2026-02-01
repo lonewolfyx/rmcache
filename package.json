@@ -3,7 +3,7 @@
     "type": "module",
     "version": "0.0.0",
     "packageManager": "pnpm@10.15.1",
-    "description": "Remove frontend junk files.",
+    "description": "\uD83D\uDCA8 Remove frontend junk files.",
     "author": "lonewolfyx <olddrivero.king@qq.com>",
     "license": "MIT",
     "homepage": "https://github.com/lonewolfyx/rmcache",
