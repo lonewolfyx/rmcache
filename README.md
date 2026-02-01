@@ -1,10 +1,7 @@
-# rmcache
+<h1 align="center">💨 rmcache</h1>
+<p align="center">Remove frontend junk files</p>
 
-Remove frontend junk files.
-
-```bash
-npx rmcache
-```
+<pre align="center">npx <b>rmcache</b></pre>
 
 ## License
 
