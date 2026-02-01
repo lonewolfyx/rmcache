@@ -3,7 +3,7 @@
     "type": "module",
     "version": "0.0.0",
     "packageManager": "pnpm@10.15.1",
-    "description": "\uD83D\uDCA8 Remove frontend junk files.",
+    "description": "💨 Remove frontend junk files.",
     "author": "lonewolfyx <olddrivero.king@qq.com>",
     "license": "MIT",
     "homepage": "https://github.com/lonewolfyx/rmcache",
@@ -19,11 +19,10 @@
         ".": "./dist/cli.mjs",
         "./package.json": "./package.json"
     },
-    "main": "./dist/cli.mjs",
-    "module": "./dist/cli.mjs",
     "types": "./dist/cli.d.mts",
     "bin": {
-        "rmcache": "./bin/cli.js"
+        "rmcache": "./bin/cli.js",
+        "rmc": "./bin/cli.js"
     },
     "files": [
         "dist"
