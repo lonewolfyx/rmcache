@@ -11,18 +11,12 @@ importers:
       cac:
         specifier: ^6.7.14
         version: 6.7.14
-      defu:
-        specifier: ^6.1.4
-        version: 6.1.4
       find-up:
         specifier: ^8.0.0
         version: 8.0.0
       glob:
         specifier: ^13.0.0
         version: 13.0.0
-      jiti:
-        specifier: ^2.6.1
-        version: 2.6.1
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^7.2.0
@@ -3135,7 +3129,8 @@ snapshots:
 
   isexe@2.0.0: {}
 
-  jiti@2.6.1: {}
+  jiti@2.6.1:
+    optional: true
 
   js-yaml@4.1.1:
     dependencies:
