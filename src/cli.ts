@@ -1,7 +1,9 @@
 import type { IOptions } from '@/types.ts'
 import * as process from 'node:process'
+import { intro, outro } from '@clack/prompts'
 import cac from 'cac'
 import { glob } from 'glob'
+import pc from 'picocolors'
 import { rimraf } from 'rimraf'
 import { resolveConfig } from '@/config.ts'
 import { JUNK_DIRS, JUNK_FILES } from '@/constants.ts'
@@ -12,6 +14,8 @@ const cli = cac(name)
 cli.command('')
     .option('-c,--cwd <path>', 'working directory', { default: process.cwd() })
     .action(async (options: IOptions) => {
+        intro(pc.bgCyan(` ${name} [v${version}]`))
+
         const config = resolveConfig(options)
 
         const patterns = [
@@ -39,7 +43,7 @@ cli.command('')
             }))
         }
 
-        console.log('Done.')
+        outro(`Done.`)
     })
 
 cli.help()

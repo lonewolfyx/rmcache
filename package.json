@@ -40,6 +40,7 @@
         "access": "public"
     },
     "dependencies": {
+        "@clack/prompts": "^1.0.0",
         "cac": "^6.7.14",
         "find-up": "^8.0.0",
         "glob": "^13.0.0",
