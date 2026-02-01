@@ -17,6 +17,7 @@ export const JUNK_DIRS = [
     '.dynamodb',
     '.firebase',
     '.tern-port',
+    '.turbo',
 ]
 
 export const JUNK_FILES = [
