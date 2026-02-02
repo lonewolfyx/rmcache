@@ -48,7 +48,7 @@ cli.command('')
             }))
         }
 
-        outro(`Done.`)
+        outro(`🎉 Done.`)
     })
 
 cli.help()
