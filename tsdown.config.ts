@@ -1,10 +1,3 @@
-import { defineConfig } from 'tsdown'
+import { cli } from 'tsdown-preset'
 
-export default defineConfig({
-    entry: 'src/cli.ts',
-    dts: true,
-    clean: true,
-    sourcemap: true,
-    platform: 'node',
-    inlineOnly: false,
-})
+export default cli()
