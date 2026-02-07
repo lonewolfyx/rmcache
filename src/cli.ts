@@ -1,6 +1,6 @@
 import type { IOptions } from '@/types.ts'
 import * as process from 'node:process'
-import { intro, log, outro } from '@clack/prompts'
+import { intro, log, note, outro } from '@clack/prompts'
 import cac from 'cac'
 import { glob } from 'glob'
 import pc from 'picocolors'
@@ -40,12 +40,18 @@ cli.command('')
             await Promise.all(folders.map(async (folder) => {
                 try {
                     await rimraf(folder)
-                    log.success(`${pc.yellow('-')} ${pc.cyan(folder.replace(config.cwd, ''))}`)
                 }
                 catch (err) {
                     log.error(`Error removing ${folder}`)
                 }
             }))
+
+            note(
+                folders
+                    .map(f => `${pc.yellow('-')} ${pc.cyan(f.replace(config.cwd, ''))}`)
+                    .join('\n'),
+                'Delete directory:',
+            )
         }
 
         outro(`🎉 Done.`)
