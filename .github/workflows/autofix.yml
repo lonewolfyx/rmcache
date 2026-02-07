@@ -20,13 +20,9 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 10.15.1
 
       - name: Install
         run: pnpm i
 
       - name: Lint
         run: pnpm run lint:fix
-
-      - uses: autofix-ci/action@7a166d7532b277f34e16238930461bf77f9d7ed8
