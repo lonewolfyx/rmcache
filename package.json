@@ -2,7 +2,7 @@
     "name": "rmcache",
     "type": "module",
     "version": "1.0.1",
-    "packageManager": "pnpm@10.15.1",
+    "packageManager": "pnpm@10.29.3",
     "description": "💨 Remove frontend junk files.",
     "author": "lonewolfyx <olddrivero.king@qq.com>",
     "license": "MIT",
