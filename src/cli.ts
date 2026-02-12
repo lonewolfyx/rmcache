@@ -17,7 +17,7 @@ cli.command('[framework]')
     .action(async (framework: string = '', options: IOptions) => {
         intro(pc.bgCyan(` ${name} [v${version}]`))
 
-        if (!getFrameWorkDirName(framework)) {
+        if (framework && !getFrameWorkDirName(framework)) {
             log.error(`${pc.red('Error')}: Framework ${framework} is not supported`)
             process.exit(0)
         }
