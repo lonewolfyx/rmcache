@@ -5,25 +5,31 @@ import cac from 'cac'
 import { glob } from 'glob'
 import pc from 'picocolors'
 import { rimraf } from 'rimraf'
+import { filterAppPaths, getCacheDir, getFrameWorkDirName } from '@/cacheDir.ts'
 import { resolveConfig } from '@/config.ts'
-import { JUNK_DIRS, JUNK_FILES } from '@/constants.ts'
+import { JUNK_FILES } from '@/constants.ts'
 import { name, version } from '../package.json'
 
 const cli = cac(name)
 
-cli.command('')
+cli.command('[framework]')
     .option('-c,--cwd <path>', 'working directory', { default: process.cwd() })
-    .action(async (options: IOptions) => {
+    .action(async (framework: string = '', options: IOptions) => {
         intro(pc.bgCyan(` ${name} [v${version}]`))
+
+        if (!getFrameWorkDirName(framework)) {
+            log.error(`${pc.red('Error')}: Framework ${framework} is not supported`)
+            process.exit(0)
+        }
 
         const config = resolveConfig(options)
 
         const patterns = [
-            ...JUNK_DIRS.map(d => `**/${d}/`),
-            ...JUNK_FILES.map(f => `**/${f}`),
+            ...getCacheDir(framework).map(d => `**/${d}/`),
+            ...(framework ? [] : JUNK_FILES.map(f => `**/${f}`)),
         ]
 
-        const folders = await glob(patterns, {
+        let folders = await glob(patterns, {
             cwd: config.cwd,
             absolute: true,
             nodir: false,
@@ -35,6 +41,10 @@ cli.command('')
                 },
             },
         })
+
+        if (framework) {
+            folders = filterAppPaths(framework, folders)
+        }
 
         if (folders.length > 0) {
             await Promise.all(folders.map(async (folder) => {

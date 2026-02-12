@@ -1,12 +1,17 @@
+export const NODE_MODULES = 'node_modules'
+export const DIST = 'dist'
+export const NUXT = '.nuxt'
+export const NEXT = '.next'
+
 export const JUNK_DIRS = [
-    'node_modules',
+    NODE_MODULES,
+    DIST,
+    NUXT,
+    NEXT,
     'jspm_packages',
     'web_modules',
     '.cache',
-    'dist',
-    '.nuxt',
     '.parcel-cache',
-    '.next',
     'out',
     '.vuepress/dist',
     '.temp',
