@@ -2,12 +2,14 @@ export const NODE_MODULES = 'node_modules'
 export const DIST = 'dist'
 export const NUXT = '.nuxt'
 export const NEXT = '.next'
+export const OUTPUT = '.output'
 
 export const JUNK_DIRS = [
     NODE_MODULES,
     DIST,
     NUXT,
     NEXT,
+    OUTPUT,
     'jspm_packages',
     'web_modules',
     '.cache',

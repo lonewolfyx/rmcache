@@ -1,10 +1,10 @@
 import { basename, dirname, sep } from 'node:path'
-import { JUNK_DIRS, NODE_MODULES, NUXT } from '@/constants.ts'
+import { JUNK_DIRS, NODE_MODULES, NUXT, OUTPUT } from '@/constants.ts'
 
 export const getCacheDir = (framework: string): string[] => {
     switch (framework) {
         case 'nuxt':
-            return [NODE_MODULES, NUXT]
+            return [NODE_MODULES, NUXT, OUTPUT]
         default:
             return JUNK_DIRS
     }
