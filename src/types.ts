@@ -2,8 +2,7 @@ export interface IOptions {
     '--': any
     'cwd': string
     'c': string
-    'cl': boolean
-    'cleanLocks': boolean
+    'lock': boolean
 }
 
 export interface IConfig {

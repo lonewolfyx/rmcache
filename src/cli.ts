@@ -14,7 +14,7 @@ const cli = cac(name)
 
 cli.command('[framework]')
     .option('-c,--cwd <path>', 'working directory', { default: process.cwd() })
-    .option('--cl,--clean-locks', 'clean lock files')
+    .option('--lock', 'clean lock files')
     .action(async (framework: string = '', options: IOptions) => {
         intro(pc.bgCyan(` ${name} [v${version}]`))
 
@@ -27,7 +27,7 @@ cli.command('[framework]')
 
         const patterns = [
             ...getCacheDir(framework).map(d => `**/${d}/`),
-            ...(framework ? [] : (options.cleanLocks ? JUNK_FILES.map(f => `**/${f}`) : [])),
+            ...(framework ? [] : (options.lock ? JUNK_FILES.map(f => `**/${f}`) : [])),
         ]
 
         let folders = await glob(patterns, {
