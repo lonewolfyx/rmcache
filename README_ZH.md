@@ -24,6 +24,7 @@ npx rmcache
 |------|------|------|
 | `[framework]` | 指定框架，只清理该框架相关的缓存文件。目前支持 `nuxt` | `rmcache nuxt` |
 | `-c, --cwd <path>` | 指定工作目录，清理该目录下的垃圾文件 | `rmcache -c /path/to/project` |
+| `--lock` | 清理时包含锁文件（默认不包含） | `rmcache --lock` |
 | `--help` | 显示帮助信息 | `rmcache --help` |
 | `--version` | 显示版本号 | `rmcache --version` |
 
@@ -35,6 +36,14 @@ npx rmcache
 
 ```bash
 npx rmcache
+```
+
+### 清理锁文件
+
+默认情况下不会清理锁文件，使用 `--lock` 参数来包含它们：
+
+```bash
+npx rmcache --lock
 ```
 
 ### 清理特定框架

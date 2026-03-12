@@ -24,6 +24,7 @@ npx rmcache
 |--------|-------------|---------|
 | `[framework]` | Specify framework to clean only framework-related cache files. Currently supports `nuxt` | `rmcache nuxt` |
 | `-c, --cwd <path>` | Specify working directory to clean junk files in | `rmcache -c /path/to/project` |
+| `--lock` | Include lock files in cleanup (not included by default) | `rmcache --lock` |
 | `--help` | Display help information | `rmcache --help` |
 | `--version` | Display version number | `rmcache --version` |
 
@@ -35,6 +36,14 @@ Run the command in your project directory to clean all junk files:
 
 ```bash
 npx rmcache
+```
+
+### Clean Lock Files
+
+By default, lock files are NOT cleaned. Use the `--lock` flag to include them:
+
+```bash
+npx rmcache --lock
 ```
 
 ### Clean Specific Framework
