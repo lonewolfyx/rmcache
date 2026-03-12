@@ -1,12 +1,15 @@
-<h1 align="center">💨 rmcache</h1>
-<p align="center">Remove frontend junk files</p>
+<div align="center">
+<h1>💨 rmcache</h1>
+
+<p>Remove frontend junk files</p>
 
 English | [中文](https://github.com/lonewolfyx/rmcache/blob/master/README_ZH.md)
 
-<p align="center">
+<p>
   <a href="https://www.npmjs.com/package/rmcache"><img src="https://img.shields.io/npm/v/rmcache" alt="npm version"></a>
   <a href="https://github.com/lonewolfyx/rmcache"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="license"></a>
 </p>
+</div>
 
 ## Introduction
 
