@@ -1,13 +1,15 @@
-<h1 align="center">💨 rmcache</h1>
-<p align="center">清理前端项目垃圾文件</p>
+<div align="center">
+<h1>💨 rmcache</h1>
+
+<p>清理前端项目垃圾文件</p>
 
 [English](https://github.com/lonewolfyx/rmcache/blob/master/README.md) | 中文
 
-<p align="center">
+<p>
   <a href="https://www.npmjs.com/package/rmcache"><img src="https://img.shields.io/npm/v/rmcache" alt="npm version"></a>
   <a href="https://github.com/lonewolfyx/rmcache"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="license"></a>
 </p>
-
+</div>
 ## 简介
 
 rmcache 是一个命令行工具，帮助你快速清理前端项目的垃圾文件和缓存目录。非常适合用于释放磁盘空间或在分享项目前清理不必要的文件。
