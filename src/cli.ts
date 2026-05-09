@@ -1,6 +1,6 @@
 import type { IOptions } from '@/types.ts'
 import * as process from 'node:process'
-import { intro, log, note, outro } from '@clack/prompts'
+import { intro, log, note, outro, progress, spinner } from '@clack/prompts'
 import cac from 'cac'
 import { glob } from 'glob'
 import pc from 'picocolors'
@@ -30,6 +30,8 @@ cli.command('[framework]')
             ...(framework ? [] : (options.lock ? JUNK_FILES.map(f => `**/${f}`) : [])),
         ]
 
+        const s = spinner()
+        s.start('Checking the "old stuff" in the project...')
         let folders = await glob(patterns, {
             cwd: config.cwd,
             absolute: true,
@@ -46,8 +48,17 @@ cli.command('[framework]')
         if (framework) {
             folders = filterAppPaths(framework, folders)
         }
+        s.stop(`Find ${pc.red(folders.length)} cleanable targets (e.g., node_modules, etc.)`)
 
         if (folders.length > 0) {
+            const prog = progress({
+                style: 'block',
+                max: folders.length,
+                size: folders.length >= 40 ? folders.length : 40,
+            })
+
+            prog.start('Freeing up disk space...')
+
             await Promise.all(folders.map(async (folder) => {
                 try {
                     await rimraf(folder)
@@ -55,7 +66,12 @@ cli.command('[framework]')
                 catch (err) {
                     log.error(`Error removing ${folder}`)
                 }
+                finally {
+                    prog.advance(1)
+                }
             }))
+
+            prog.stop('Clean up!')
 
             note(
                 folders
