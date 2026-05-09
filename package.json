@@ -1,7 +1,7 @@
 {
     "name": "rmcache",
     "type": "module",
-    "version": "1.0.6",
+    "version": "1.1.0",
     "packageManager": "pnpm@10.15.1",
     "description": "💨 Remove frontend junk files.",
     "author": "lonewolfyx <olddrivero.king@qq.com>",
