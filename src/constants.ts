@@ -25,6 +25,7 @@ export const JUNK_DIRS = [
     '.firebase',
     '.tern-port',
     '.turbo',
+    'cache',
 ]
 
 export const JUNK_FILES = [
