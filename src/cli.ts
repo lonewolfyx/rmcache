@@ -14,7 +14,7 @@ const cli = cac(name)
 
 cli.command('[framework]')
     .option('-c,--cwd <path>', 'working directory', { default: process.cwd() })
-    .option('--lock', 'clean lock files')
+    .option('--lock', 'clean lock files', { default: false })
     .action(async (framework: string = '', options: IOptions) => {
         intro(pc.bgCyan(` ${name} [v${version}]`))
 
