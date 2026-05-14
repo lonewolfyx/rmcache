@@ -7,7 +7,7 @@ import pc from 'picocolors'
 import { rimraf } from 'rimraf'
 import { filterAppPaths, getCacheDir, getFrameWorkDirName } from '@/cacheDir.ts'
 import { resolveConfig } from '@/config.ts'
-import { JUNK_FILES } from '@/constants.ts'
+import { ignoreFilename, JUNK_FILES } from '@/constants.ts'
 import { name, version } from '../package.json'
 
 const cli = cac(name)
@@ -36,10 +36,15 @@ cli.command('[framework]')
             cwd: config.cwd,
             absolute: true,
             nodir: false,
+            dot: true,
             ignore: {
                 ignored: (p) => {
-                    // If the path already contains node_modules and does not end with node_modules, it is going deeper and can be ignored
                     const pathString = p.fullpath()
+
+                    if (ignoreFilename.some(folder => pathString.includes(folder))) {
+                        return true
+                    }
+
                     return pathString.includes('node_modules/') && !pathString.endsWith('node_modules/')
                 },
             },

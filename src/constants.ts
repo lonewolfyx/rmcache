@@ -35,3 +35,9 @@ export const JUNK_FILES = [
     'deno.lock', // deno
     'vlt.json', // vlt
 ]
+
+export const ignoreFilename = [
+    '.git/',
+    '.vscode/',
+    '.idea/',
+]
