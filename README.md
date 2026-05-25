@@ -15,6 +15,8 @@ English | [中文](https://github.com/lonewolfyx/rmcache/blob/master/README_ZH.m
 
 rmcache is a CLI tool that helps you quickly clean up frontend project junk files and cache directories. It's perfect for freeing up disk space or preparing your project for sharing.
 
+### <span style="color:yellow;">📢 Recommended to run only at the project level. If you run it in `homedir()`, good luck~</span>
+
 ## Installation
 
 ```bash

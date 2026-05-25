@@ -10,9 +10,12 @@
   <a href="https://github.com/lonewolfyx/rmcache"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="license"></a>
 </p>
 </div>
-## 简介
+
+## About
 
 rmcache 是一个命令行工具，帮助你快速清理前端项目的垃圾文件和缓存目录。非常适合用于释放磁盘空间或在分享项目前清理不必要的文件。
+
+### <span style="color:yellow;">📢 只推荐在项目层级运行。如果你在 homedir() 运行那就祝你好运了~</span>
 
 ## 安装
 
