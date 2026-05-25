@@ -64,15 +64,10 @@ cli.command('[framework]')
 
             prog.start('Freeing up disk space...')
 
-            await Promise.all(folders.map(async (folder) => {
-                prog.advance(1)
-                try {
-                    await rimraf(folder)
-                }
-                catch (err) {
-                    log.error(`Error removing ${folder}`)
-                }
-            }))
+            for (const folder of folders) {
+                prog.advance(1, `Delete: ${pc.red(folder)}`)
+                await rimraf(folder)
+            }
 
             prog.stop('Clean up!')
 
