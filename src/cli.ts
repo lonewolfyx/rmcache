@@ -57,9 +57,9 @@ cli.command('[framework]')
 
         if (folders.length > 0) {
             const prog = progress({
+                indicator: 'timer',
                 style: 'block',
                 max: folders.length,
-                size: folders.length >= 40 ? folders.length : 40,
             })
 
             prog.start('Freeing up disk space...')
