@@ -25,6 +25,10 @@ export const JUNK_DIRS = [
     '.firebase',
     '.tern-port',
     '.turbo',
+    // https://github.com/github/gitignore/blob/main/Swift.gitignore
+    '.build',
+    'build',
+    'Carthage',
 ]
 
 export const JUNK_FILES = [
